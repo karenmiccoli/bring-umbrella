@@ -1,16 +1,18 @@
 import requests
 import os
 from twilio.rest import Client
+from dotenv import load_dotenv
 
-WEATHER_API_KEY = os.environ.get("WEATHER_API_KEY")
+load_dotenv()
 
 MY_LAT = 53.258663
 MY_LNG = -2.119287
 
 TWILIO_URL = "https://www.twilio.com"
-TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
-TWILIO_ACCOUNT_SID = os.environ.get("T️WILIO_ACCOUNT_SID")
-TWILIO_NUMBER_UK = os.environ.get("TWILIO_NUMBER_UK")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
+TWILIO_NUMBER_UK = os.getenv("TWILIO_NUMBER_UK")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
 params = {
     "lat": MY_LAT,
